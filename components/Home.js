@@ -1,15 +1,24 @@
-import styles from '../styles/Home.module.css';
+import styles from "../styles/Home.module.css";
+import backgroundImage from "../public/background.png"; // Assurez-vous que le chemin est correct
 
-function Home() {
+const Home = () => {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+    <div className={styles.container}>
+      <div
+        className={styles.backgroundImage}
+        style={{
+          backgroundImage: `url(${backgroundImage.src})`,
+          backgroundSize: "cover",
+        }}
+      >
+        {/* Le contenu de votre site va ici */}
+      </div>
+      <div className={styles.secondBlack}>
+        Partie de droite
+        {/* Le contenu de la deuxième partie va ici */}
+      </div>
     </div>
   );
-}
+};
 
 export default Home;
