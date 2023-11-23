@@ -8,8 +8,10 @@
 }
 
 .title {
-  line-height: 1.15;
-  font-size: 4rem;
+  line-height: 1, 5;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: 25px;
 }
 
 .title a {
@@ -22,19 +24,35 @@
 .title a:active {
   text-decoration: underline;
 }
+.button {
+  margin-left: "25px";
+  color: "blue";
+}
 
 .backgroundImage {
   width: 40%;
   background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .secondBlack {
+  position: relative;
   width: 60%;
-
   background-color: black;
   color: white;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 .container {
   display: flex;
   height: 100vh;
+}
+
+.whiteLogo {
+  width: 300px;
+  transform: rotate(180deg);
 }
