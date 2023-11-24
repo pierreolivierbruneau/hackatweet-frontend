@@ -1,8 +1,50 @@
 import styles from "../styles/Home.module.css";
 import backgroundImage from "../public/background.png"; // Assurez-vous que le chemin est correct
-import react from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [signUpFirstname, setsignUpFirstname] = useState("");
+  const [signUpUsername, setsignUpUsername] = useState("");
+  const [signUpPassword, setsignUpPassword] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+      });
+  }, []);
+
+  let modalContent = (
+    <div className={styles.boutonSignup}>
+      <p>Sign-up</p>
+      <input
+        type="firstname"
+        placeholder="Firstname"
+        id="FIRSTNAME"
+        onChange={(e) => setFirstname(e.target.value)}
+        value={signUpFirstname}
+      />
+      <input
+        type="textfirst"
+        placeholder="Username"
+        id="SIGNIN"
+        onChange={(e) => setSignUpUsername(e.target.value)}
+        value={signUpUsername}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        id="SIGNUP"
+        onChange={(e) => setSignUpPassword(e.target.value)}
+        value={signUpPassword}
+      />
+      <button id="register" onClick={() => handleRegister()}>
+        Signup
+      </button>
+    </div>
+  );
+
   return (
     <div className={styles.container}>
       <div
